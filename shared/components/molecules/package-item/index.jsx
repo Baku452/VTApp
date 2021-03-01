@@ -18,7 +18,8 @@ function Days({ days }) {
 
 function PackageItem({ title, days, slug, thumbnail }) {
   return (
-    <Link href={`/package/${slug}`}>
+    // <Link href={`/package/${slug}`}>
+    <Link href={`/${slug}`}>
       <div className="card w-100 cursor-pointer">
         <img src={thumbnail} className="card-img-top" alt={title} />
 
