@@ -65,7 +65,7 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/search">
+                  <Link href="/tailor-made-tour">
                     <a href="#">Tailor Made Tours</a>
                   </Link>
                 </li>
@@ -112,67 +112,79 @@ function Footer() {
             </div>
             <div className="col-12 col-md-12 col-lg-3 text-left text-white pb-4">
               <h6 className="text-white font-weight-bold fs-13 pb-2 "> FOLLOW US</h6>
-              <a
-                href="https://www.facebook.com/valenciatravelcusco/"
-                target="_blank"
-                rel="noreferrer"
-                className="d-inline-block pb-3 pr-1">
-                <Icon component={Facebook} viewBox="0 0 54 53" className="icon-size-l" />
-              </a>
-              <a
-                href="https://www.instagram.com/valenciatravelcusco/"
-                target="_blank"
-                rel="noreferrer"
-                className="d-inline-block  pb-3 pr-1">
-                <Icon component={Instagram} viewBox="0 0 59 58" className="icon-size-l" />
-              </a>
-              <a
-                href="https://vimeo.com/user131526189"
-                target="_blank"
-                rel="noreferrer"
-                className="d-inline-block pb-3 pr-1">
-                <Icon component={Vimeo} viewBox="0 0 54 53" className="icon-size-l" />
-              </a>
-              <a
-                href="https://www.pinterest.com/Valencia100/_created/"
-                target="_blank"
-                rel="noreferrer"
-                className="d-inline-block pb-3 pr-1">
-                <Icon component={Pinterest} viewBox="0 0 55 55" className="icon-size-l" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/valencia-travel-cusco/"
-                target="_blank"
-                rel="noreferrer"
-                className="d-inline-block pb-3 pr-1">
-                <Icon component={Linkedin} viewBox="0 0 57 56" className="icon-size-l" />
-              </a>
-              <a
-                href="https://www.tripadvisor.com/UserReviewEdit-g294314-d2469804-Valencia_Travel_Day_Tours-Cusco_Cusco_Region.html"
-                target="_blank"
-                rel="noreferrer"
-                className="d-inline-block pb-3 pr-1">
-                <Icon component={Advisor} viewBox="0 0 54 53" className="icon-size-l" />
-              </a>
-              <a
-                href="skype:valenciatravel.cusco?call"
-                className="d-inline-block pb-3 pr-1">
-                <Icon component={Skype} viewBox="0 0 59 58" className="icon-size-l" />
-              </a>
-              <a
-                href="https://www.youtube.com/ValenciaTravelCuscoPeru"
-                target="_blank"
-                rel="noreferrer"
-                className="d-inline-block pb-3 pr-1">
-                <Icon component={Youtube} viewBox="0 0 59 59" className="icon-size-l" />
-              </a>
+              <div>
+                <a
+                  href="https://www.facebook.com/valenciatravelcusco/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block pb-3 pr-1">
+                  <Icon component={Facebook} viewBox="0 0 54 53" className="icon-size-l" />
+                </a>
+                <a
+                  href="https://www.instagram.com/valenciatravelcusco/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block  pb-3 pr-1">
+                  <Icon component={Instagram} viewBox="0 0 59 58" className="icon-size-l" />
+                </a>
+                <a
+                  href="https://vimeo.com/user131526189"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block pb-3 pr-1">
+                  <Icon component={Vimeo} viewBox="0 0 54 53" className="icon-size-l" />
+                </a>
+                <a
+                  href="https://www.pinterest.com/Valencia100/_created/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block pb-3 pr-1">
+                  <Icon component={Pinterest} viewBox="0 0 55 55" className="icon-size-l" />
+                </a>
+
+              </div>
+              <div>
+                <a
+                  href="https://www.linkedin.com/company/valencia-travel-cusco/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block pb-3 pr-1">
+                  <Icon component={Linkedin} viewBox="0 0 57 56" className="icon-size-l" />
+                </a>
+                <a
+                  href="https://www.tripadvisor.com/UserReviewEdit-g294314-d2469804-Valencia_Travel_Day_Tours-Cusco_Cusco_Region.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block pb-3 pr-1">
+                  <Icon component={Advisor} viewBox="0 0 54 53" className="icon-size-l" />
+                </a>
+                <a
+                  href="skype:valenciatravel.cusco?call"
+                  className="d-inline-block pb-3 pr-1">
+                  <Icon component={Skype} viewBox="0 0 59 58" className="icon-size-l" />
+                </a>
+                <a
+                  href="https://www.youtube.com/ValenciaTravelCuscoPeru"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="d-inline-block pb-3 pr-1">
+                  <Icon component={Youtube} viewBox="0 0 59 59" className="icon-size-l" />
+                </a>
+
+              </div>
             </div>
           </div>
 
           <div className="row position-relative">
             <div className="col-12 p-0 text-center">
               <p className="m-0 fs-13 text-white">
-                2016 Valencia Travel Cusco, Inc. All Rights Reserved: Terms & Conditions -
+                2016 Valencia Travel Cusco, Inc. All Rights Reserved:  
+                <Link href="/terms-conditions">
+                  <a href="#" className="skyblue">
+                   Terms & Conditions
+                  </a>
+                </Link>
+                -
                 <Link href="/contact-us">
                   <a href="#" className="skyblue">
                     {' '}

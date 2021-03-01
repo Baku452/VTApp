@@ -150,6 +150,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  // const response = await fetch(`${PUBLIC_API}/package/${params.slug}`);
   const response = await fetch(`${PUBLIC_API}/package/${params.slug}`);
   const pack = await response.json();
 
