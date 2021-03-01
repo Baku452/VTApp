@@ -40,11 +40,10 @@ function ContactForm({ destinations, packages, title = true, pack }) {
                 <div className="card-body pb-5 pt-5 mt-4 text-center">
                   <h5 className="card-title fs-30 pb-5">Thank you for contacting us!</h5>
                   <p className="card-text fs-18 lh-29">
-                    One of our Travel Specialists will contact you in less than 48 hours
-                    <br />
-                    While you are still here, feel free to navigate through our
+                  We respond to all inquiries within one business day. If you do not hear back from us within this timeframe, please check your spam folder or call 1 - (860) 856 5858
+                    <br/>
                     <Link href="/">
-                      <a> travel destinations</a>
+                      <a> Go see travel destinations</a>
                     </Link>
                   </p>
                 </div>

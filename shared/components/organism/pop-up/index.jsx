@@ -7,7 +7,7 @@ const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
 function PopUp({popup}) {
     const [show, setShow] = useState(false);
-    const delay = 3;
+    const delay = 60;
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     useEffect(
