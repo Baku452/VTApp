@@ -19,6 +19,7 @@ export * from './molecules/itinerary-icons/index';
 export * from './molecules/notification/index';
 export * from './molecules/destination-check/index';
 export * from './molecules/card-box/index';
+export * from './molecules/form-modal/index';
 
 
 // ORGANISM

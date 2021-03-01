@@ -53,7 +53,7 @@ function Package({ pack, destinations, packagetypes, notifications }) {
   useEffect(() => {
     fetchPackages();
     fetchOptional();
-  })
+  },[])
 
 
   return (

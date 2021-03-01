@@ -1,7 +1,11 @@
+/* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Modal, Row, Col } from 'react-bootstrap'
+import {ModalForm} from '@/components/index';
+import styles from './index.module.scss';
+const PUBLIC_API = process.env.NEXT_PUBLIC_API;
 
-function PopUp() {
+function PopUp({popup}) {
     const [show, setShow] = useState(false);
     const delay = 3;
     const handleClose = () => setShow(false);
@@ -18,19 +22,25 @@ function PopUp() {
 
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-          </Button>
-                    <Button variant="primary" onClick={handleClose}>
-                        Save Changes
-          </Button>
-                </Modal.Footer>
+            <Modal 
+            show={show} 
+            onHide={handleClose}
+            centered
+            dialogClassName={styles.modal}
+            >
+                <Modal.Body className={styles.flexModal}>
+                        <div xs={12} md={5} className="px-5 py-5">
+                            <h3> {popup.title}</h3>
+                            <p className="pt-5">{popup.content}</p>
+                            <ModalForm></ModalForm>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                        </div>
+                        <div xs={6} md={5}>
+                            <img src={PUBLIC_API + popup.original}></img>
+                        </div>
+                </Modal.Body>
             </Modal>
         </>
     )

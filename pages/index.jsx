@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import ScriptTag from 'react-script-tag';
 import { PopUp } from '@/components/index';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 
 import {
@@ -26,6 +26,7 @@ function Index({
   packagetypes,
   interests,
   notifications,
+  popups
 }) {
 
 
@@ -49,7 +50,13 @@ function Index({
         packagetypes={packagetypes}
         interests={interests}
       />
-      <PopUp></PopUp>
+      {
+        popups.map(item => ( 
+          <PopUp popup={item}></PopUp>
+        ))
+
+        }
+      }
       <VacationType types={types} packagetypes={packagetypes} />
       <OurRecommendations />
       <TopTours tours={tours} />
@@ -87,6 +94,9 @@ export async function getStaticProps() {
   const notificationResponse = await fetch(`${PUBLIC_API}/notification/`);
   const notifications = await notificationResponse.json();
 
+  const popupResponse = await fetch(`${PUBLIC_API}/popup/`);
+  const popups = await popupResponse.json();
+
   return {
     props: {
       types,
@@ -96,6 +106,7 @@ export async function getStaticProps() {
       packagetypes,
       interests,
       notifications,
+      popups
     },
     revalidate: 1,
   };
