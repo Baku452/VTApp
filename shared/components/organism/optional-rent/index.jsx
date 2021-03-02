@@ -39,11 +39,11 @@ function OptionalReting({ optionals }) {
               <div className="row pb-4">
 
                     <div
-                      className="col-12 col-md-8 order-2 order-md-1"
+                      className="col-12 col-md-8 order-2 order-md-1 listStyle"
                       dangerouslySetInnerHTML={{ __html: item?.content }}
                       />
                     {item.images ? item.images.length > 0 && (
-                      <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2">
+                      <div className="col-12 offset-md-1 col-md-3 pt-2 order-1 order-md-2 ">
                       <img
                         src={PUBLIC_API + item.images[0].image}
                         className="d-block w-100 fit"
