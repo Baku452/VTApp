@@ -1,4 +1,4 @@
-import { Link } from 'react-scroll';
+import Link from 'next/link';
 import styles from './index.module.scss';
 
 function OurRecommendations() {

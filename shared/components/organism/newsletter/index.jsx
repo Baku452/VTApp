@@ -10,7 +10,6 @@ import styles from './index.module.scss';
 
 function Newsletter() {
   const router = useRouter();
-
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = event => {
