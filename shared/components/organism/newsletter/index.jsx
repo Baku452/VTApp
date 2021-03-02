@@ -65,8 +65,8 @@ function Newsletter() {
           <div className="row flex-nowrap align-items-start">
             <div className="col-auto p-0">
               <div className="fw-bold text-right fs-13">
-                Toll Free: 1-(888)803-8004 <br />
-                (511) 423 6758
+                Toll Free: 1 - (917) 983 2727 <br />
+                1 - (860) 856 5858
               </div>
             </div>
             <div className="col-auto">

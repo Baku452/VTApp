@@ -22,7 +22,7 @@ function OurRecommendations() {
                 <div className="col-12 col-lg-4 mt-4 mb-4 text-center">
                   <Link href="/search?destination=14">
                     <div className={`${styles.item} ${styles.item1}`}>
-                      <h4 className="m-0 fs-18 lh-20 text-white">
+                      <h4 className="m-0 fs-20 lh-20 text-white">
                       Experience South America with Valencia Travel
                       </h4>
                     </div>
@@ -31,7 +31,7 @@ function OurRecommendations() {
                 <div className="col-12 col-lg-4  mt-4 mb-4 text-center">
                 <Link href="/search?types=2">
                   <div className={`${styles.item} ${styles.item2}`}>
-                    <h4 className="m-0 fs-18 lh-20 text-white">
+                    <h4 className="m-0 fs-20 lh-20 text-white">
                       Add experiences to your tours to enhance your travel experience
                     </h4>
                   </div>
@@ -40,7 +40,7 @@ function OurRecommendations() {
                 <div className="col-12 col-lg-4  mt-4  mb-4 text-center">
                 <Link href="/tailor-made-tour">
                   <div className={`${styles.item} ${styles.item3}`}>
-                    <h4 className="m-0 fs-18 lh-20 text-white">
+                    <h4 className="m-0 fs-20 lh-20 text-white">
                       Design your own travel experience. We can help you.
                     </h4>
                   </div>
