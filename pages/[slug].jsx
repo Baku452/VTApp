@@ -53,7 +53,7 @@ function Package({ pack, destinations, packagetypes, notifications }) {
   useEffect(() => {
     fetchPackages();
     fetchOptional();
-  },[])
+  }, [])
 
 
   return (
@@ -92,9 +92,9 @@ function Package({ pack, destinations, packagetypes, notifications }) {
             }
 
 
-            {pack?.optionals.length > 0 ?
+            {pack?.optional_forRenting.length > 0 ?
               <>
-                <OptionalReting optionals={pack?.optionals} />
+                <OptionalReting optionals={pack?.optional_forRenting} />
                 <Divider />
               </> : null
             }
