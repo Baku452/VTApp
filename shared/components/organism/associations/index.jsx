@@ -18,13 +18,12 @@ function Associations() {
         <div className="row">
           <div className="container pt-4 pb-4">
             <div className="row">
-            {/* <div className="col-6 col-md-4 col-lg-2 text-center">
-                <Icon
-                  component={safetravel}
-                  viewBox="0 0 268 70"
-                  style={{ fontSize: '150px' }}
+            <div className="col-6 col-md-4 col-lg-2 text-center">
+                <img
+                  src="images/WTTC_SafeTravels_Stamp.png"
+                  style={{ width: '120px' }}
                 />
-              </div> */}
+              </div>
               <div className="col-6 col-md-4 col-lg-2 text-center">
                 <Icon
                   component={Attamember}

@@ -29,10 +29,9 @@ function PopUp({popup}) {
             dialogClassName={styles.modal}
             >
                 <Modal.Body className={styles.flexModal}>
-                        <div xs={12} md={5} className="px-5 py-5">
-                            <h3> {popup.title}</h3>
-                            <p className="pt-5">{popup.content}</p>
-                            <ModalForm></ModalForm>
+                        <div xs={12} md={5} className="py-5">
+                            
+                            <ModalForm title={popup.title} content={popup.content}></ModalForm>
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
                             </Button>

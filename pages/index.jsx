@@ -60,12 +60,15 @@ function Index({
       <OurRecommendations />
       <TopTours tours={tours} />
       <div style={{"background-color": '#f4f4f4'}}>
-        {<>
-          <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer></ScriptTag>
-          <div class="elfsight-app-e76c2df3-57df-4924-a3b4-257b7e21a253"></div>
-        </>
-        }
-        {/* <Reviews /> */}
+    
+          {<>
+            <ScriptTag src="https://apps.elfsight.com/p/platform.js" defer></ScriptTag>
+            <div class="elfsight-app-e76c2df3-57df-4924-a3b4-257b7e21a253"></div>
+          </>
+          }
+          {/* <Reviews /> */}
+     
+ 
       </div>
       <SubNewsletter />
       <Associations />

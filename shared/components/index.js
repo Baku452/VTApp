@@ -20,6 +20,7 @@ export * from './molecules/notification/index';
 export * from './molecules/destination-check/index';
 export * from './molecules/card-box/index';
 export * from './molecules/form-modal/index';
+export * from './molecules/bannerDestinations/index';
 
 
 // ORGANISM
@@ -47,6 +48,7 @@ export * from './organism/tailor-form/index';
 export * from './organism/page-content/index';
 export * from './organism/tailor-works/index';
 export * from './organism/pop-up/index';
+export * from './organism/destinationOverview/index';
 
 
 

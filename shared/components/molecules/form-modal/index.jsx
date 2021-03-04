@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 import { countries, saveContactUs } from '@/core/index';
 
-function ModalForm() {
+function ModalForm({title, content}) {
   const [validated, setValidated] = useState(false);
   const [success, setSuccess] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
@@ -39,10 +39,10 @@ function ModalForm() {
                 <div className="card-body pb-5 pt-5 mt-4 text-center">
                   <h5 className="card-title fs-30 pb-5">Thank you for contacting us!</h5>
                   <p className="card-text fs-18 lh-29">
-                    One of our Travel Specialists will contact you in less than 48 hours
+                  Travel destinations that amaze, stories that inspire, life experiences, mindful travel, and advice from our experts delivered straight to your inbox. 
                     <br />
                     While you are still here, feel free to navigate through our
-                    <Link href="/">
+                    <Link href="/search">
                       <a> travel destinations</a>
                     </Link>
                   </p>
@@ -50,6 +50,8 @@ function ModalForm() {
               </div>
             ) : (
                   <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                  <h3> {title}</h3>
+                  <p className="pt-5">{content}</p>
                     <div className="col-12 mx-auto p-0 text-left">
                       <div className="row mb-2">
                         <div className="col-12">

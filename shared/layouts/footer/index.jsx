@@ -118,7 +118,7 @@ function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   className="d-inline-block pb-3 pr-1">
-                  <Icon component={Facebook} viewBox="0 0 54 53" className="icon-size-l" />
+                  <Icon component={Facebook} viewBox="0 0 54 53" className={`${styles.icon} icon-size-l`} />
                 </a>
                 <a
                   href="https://www.instagram.com/valenciatravelcusco/"

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
-import { Collapse, CollapseContent, Icon, PackageItem } from '@/components/index';
+import { Collapse, CollapseContent, Icon, PackageItem, DestinationOverview } from '@/components/index';
 import { activities, days, packages, years } from '@/core/index';
 import Close from '@/icons/close.svg';
 import { Base } from '@/layouts/index';
@@ -24,6 +24,8 @@ function Search({ destinations, packagetypes, interests, notifications }) {
   const [checkedMonths, setCheckedMonths] = useState([]);
   const [checkedYearMonth, setCheckedYearMonth] = useState([]);
   const [showFilters, setShowFilters] = useState(false);
+
+  const [destChecked, setDestChecked] = useState({title:'', content:'', picture:''});
 
   function actionFiltersMonths(event, id, yearIndex, monthIndex) {
     years[yearIndex].months[monthIndex].checked = event.target.checked;
@@ -115,14 +117,14 @@ function Search({ destinations, packagetypes, interests, notifications }) {
 
   function actionFiltersDestinations(value, id) {
     const index = checkedDestination.findIndex(item => item === String(id));
-
     if (index === -1) checkedDestination.push(String(id));
     else checkedDestination.splice(index, 1);
-
     router.push({
       pathname: '/search',
       query: { ...router.query, destination: checkedDestination.join() },
     });
+
+  
   }
 
   function setActionChecked(id, state) {
@@ -133,8 +135,6 @@ function Search({ destinations, packagetypes, interests, notifications }) {
     const [, querySet] = router.asPath.split('?');
     const queryParams = querySet ? `?${querySet}` : '';
     const { result } = await packages({ queryParams });
-    console.log(queryParams);
-
     setPackagesList(result?.data);
   }
 
@@ -152,7 +152,13 @@ function Search({ destinations, packagetypes, interests, notifications }) {
           if (destinationActiveItem) destinationActiveItems.push(destinationActiveItem);
         });
       });
-
+      if(destinationsActive.length <= 1){
+        destinations.map(country =>
+          country.destinations.map(
+            item => item.id == destinationsActive[0] ? setDestChecked({title: item.title, content: item.content, picture: item.picture}) : null
+          )
+          )
+    }
       // setCheckedDestination(router?.query?.destination.split(','));
     }
 
@@ -191,6 +197,8 @@ function Search({ destinations, packagetypes, interests, notifications }) {
     }
 
     fetchPackages();
+
+    
   }, [router]);
 
   return (
@@ -207,6 +215,10 @@ function Search({ destinations, packagetypes, interests, notifications }) {
           </div>
         </div>
       </div>
+      {checkedDestination.length ==1 ? 
+      <DestinationOverview title={destChecked.title} picture={destChecked.picture} content={destChecked.content} ></DestinationOverview>
+      : null}
+      
       <section id="tours_all">
         <div className="container">
           <div className="row pt-5 pb-4">
@@ -249,10 +261,13 @@ function Search({ destinations, packagetypes, interests, notifications }) {
                                     destination.active && (
                                       <Form.Check
                                         key={destination.id}
-                                        checked={setActionChecked(
+                                        checked={ 
+                                          setActionChecked(
                                           destination.id,
-                                          checkedDestination,
-                                        )}
+                                          checkedDestination
+                                        )
+                                        
+                                        }
                                         type="checkbox"
                                         onChange={event =>
                                           actionFiltersDestinations(event, destination.id)

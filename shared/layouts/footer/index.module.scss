@@ -23,4 +23,14 @@
   .title {
     border-bottom: 1px solid #525252;
   }
+  .icon:hover {
+    color: royalblue;
+    width: 52px;
+    background-image: url("/icons/youtube.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .icon:hover path{
+    fill: none;
+  }
 }
