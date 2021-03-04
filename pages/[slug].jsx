@@ -40,8 +40,8 @@ function Package({ pack, destinations, packagetypes, notifications }) {
   }
 
   async function fetchPackages() {
-    const { activity, package_type, destination } = pack;
-    const queryStr = { activity, package_type, destination }
+    const { interest, package_type, destination } = pack;
+    const queryStr = { interest, package_type, destination }
     const querySet = Object.keys(queryStr).map(key => `${key}=${queryStr[key]}`).join('&');
     const queryParams = querySet ? `?${querySet}` : '';
 
@@ -50,8 +50,8 @@ function Package({ pack, destinations, packagetypes, notifications }) {
       setPackagesList(result.data);
     }
   }
+  fetchPackages();
   useEffect(() => {
-    fetchPackages();
     fetchOptional();
   }, [])
 
@@ -122,12 +122,12 @@ function Package({ pack, destinations, packagetypes, notifications }) {
                     className="col-12 fs-16 lh-29"
                     dangerouslySetInnerHTML={{ __html: pack?.old_overview }}
                   />
+                  <Divider />
                 </div> : null
             }
 
-            <Divider />
             {
-              pack?.old_itinerario ?
+              pack.old_itinerario.length > 0 ?
                 <Itineraries name="old-itinerario" title="Related Itinerary" itineraries={pack?.old_itinerario} /> : null
             }
 
@@ -164,7 +164,9 @@ export async function getStaticProps({ params }) {
   const notifications = await notificationResponse.json();
 
 
-  return { props: { pack, destinations, packagetypes, notifications } };
+  return {
+    props: { pack, destinations, packagetypes, notifications }, revalidate: 1,
+  };
 }
 
 export default Package;
